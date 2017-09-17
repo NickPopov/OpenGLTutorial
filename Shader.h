@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "Transform.h"
+
 #include "GL\glew.h"
 
 class Shader
@@ -11,6 +13,7 @@ public:
 	virtual ~Shader();
 
 	void Bind();
+	void Update(Transform &transform);
 
 	static std::string LoadShader(const std::string &fileName);
 	static void CheckShaderError(GLuint shader, GLuint flag, bool isProgram, const std::string &errorMassage);
@@ -18,7 +21,15 @@ public:
 
 private:
 	static const unsigned int NUM_SHADERS = 2;
+
+	enum
+	{
+		TRANSFORM_U,
+		NUM_UNIFORMS
+	};
+
 	GLuint m_program;
 	GLuint m_shaders[NUM_SHADERS];
+	GLuint m_uniforms[NUM_UNIFORMS];
 };
 
