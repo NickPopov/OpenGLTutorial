@@ -6,10 +6,11 @@
 class Vertex
 {
 public:
-	Vertex(const glm::vec3 &pos);
+	Vertex(const glm::vec3 &pos, const glm::vec2 &texCoord);
 	virtual ~Vertex();
-private:
-	glm::vec3 m_pos;
+//private:
+	glm::vec3 pos;
+	glm::vec2 texCoord;
 };
 
 
@@ -24,7 +25,8 @@ public:
 private:
 	enum
 	{
-		POSITION_VB,		
+		POSITION_VB,
+		TEXCOORD_VB,
 		NUM_BUFFERS
 	};
 
