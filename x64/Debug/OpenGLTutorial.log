@@ -1,0 +1,5 @@
+﻿  Main.cpp
+e:\my\мои проэкты\opengl\opengltutorial\opengltutorial\display.h(5): fatal error C1083: Не удается открыть файл включение: SDL2\SDL.h: No such file or directory
+  Display.cpp
+e:\my\мои проэкты\opengl\opengltutorial\opengltutorial\display.h(5): fatal error C1083: Не удается открыть файл включение: SDL2\SDL.h: No such file or directory
+  Создание кода...
