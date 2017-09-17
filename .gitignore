@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+Debug/OpenGLTutorial.Build.CppClean.log 
+Debug/OpenGLTutorial.tlog/CL.command.1.tlog 
+Debug/OpenGLTutorial.tlog/CL.read.1.tlog 
+Debug/OpenGLTutorial.tlog/CL.write.1.tlog 
+Debug/OpenGLTutorial.tlog/link.command.1.tlog 
+Debug/OpenGLTutorial.tlog/link.read.1.tlog 
+Debug/OpenGLTutorial.tlog/link.write.1.tlog 
+Debug/ 
+OpenGLTutorial.vcxproj 
+OpenGLTutorial.vcxproj.filters 
