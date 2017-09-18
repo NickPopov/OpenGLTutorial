@@ -5,13 +5,16 @@
 #include "Mesh.h"
 #include "Texture.h"
 #include "Transform.h"
+#include "Camera.h"
 
 #include "GL\glew.h"
 
 int main(int argc, char** argv)
 {
+	float width = 800;
+	float height = 600;
 	std::string title = "Hello world";
-	Display display(800, 600, title);
+	Display display(width, height, title);
 
 	Shader shader("./res/basicShader");
 	Vertex vertices[] = {
@@ -22,6 +25,7 @@ int main(int argc, char** argv)
 	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]));
 	Texture texture("./res/bricks.jpg");
 	Transform transform;
+	Camera camera(glm::vec3(0, 0, -3), 70.0f, width / height, 0.01f, 1000.0f);	
 
 	float counter = 0.0f;
 
@@ -33,15 +37,15 @@ int main(int argc, char** argv)
 		float cosCounter = cosf(counter);
 
 		transform.GetPosition().x = sinCounter;
-		transform.GetRotation().z = counter;
-		transform.SetScale(glm::vec3(cosCounter, cosCounter, cosCounter));
+		transform.GetRotation().z = counter;		
 
 		shader.Bind();		
 		texture.Bind(0);
-		shader.Update(transform);
+		shader.Update(transform, camera);
+		
 		mesh.Draw();
 		display.Update();
-		counter += 0.001f;
+		counter += 0.0001f;
 	}
 	return 0;
 }

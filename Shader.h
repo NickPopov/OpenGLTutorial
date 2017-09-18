@@ -3,6 +3,7 @@
 #include <string>
 
 #include "Transform.h"
+#include "Camera.h"
 
 #include "GL\glew.h"
 
@@ -13,7 +14,7 @@ public:
 	virtual ~Shader();
 
 	void Bind();
-	void Update(Transform &transform);
+	void Update(Transform &transform, const Camera &camera);	
 
 	static std::string LoadShader(const std::string &fileName);
 	static void CheckShaderError(GLuint shader, GLuint flag, bool isProgram, const std::string &errorMassage);
